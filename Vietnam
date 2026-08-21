@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- <link rel="stylesheet" href="/CSS/viStyle.css"> -->
+  <style>
+
+p{
+margin-top: 20px;
+margin-left: 11px;
+ 
+}
+
+/* body{
+ 
+} */
+
+footer{
+ /* color: rgb(145, 145, 145); */
+ bottom: 0%;
+ position: fixed;
+ width: 100%;
+ text-align: center;
+ opacity: 50%;
+     }
+
+#dateRight{
+    text-align: right;
+    position: block;
+    margin-right: 50px;
+}
+
+#centerLetter{
+    text-align: center;
+}
+
+@media print {
+    @page {
+        margin: 1.5cm;
+    }
+}
+  </style>
+ <title>Vietnam</title>
+</head>
+
+<body>
+
+ <br>
+
+ <p>
+<div id="dateRight"><span id="date"></span></div>
+<br>
+<br>
+<div id="centerLetter">RETURN TO ORIGIN REQUEST LETTER</div>
+<br>
+Shipper name: Example.com
+<br>
+<br>
+Shipper address: Example.com, Example Road, Example, London, EX25 7EX
+<br>
+  <br>
+Cnee name: <span id="customer"></span>
+<br>
+<br>
+Cnee address: <span id="address"></span>
+<br>
+<br>
+Address to: Vietnam Customs Office
+<br>
+AWB: <span id="waybill-number"></span>
+<br>
+<br>
+Dear Sir,
+<br>
+<br>
+Herewith we would like to request your approval to return of the above pack through DHL Expres courier.
+<br>
+<br>
+The reason of this return is because it's no longer required by the recipient.
+<br>
+<br>
+We sincerely look forward to your consideration and investigation for this shipment.
+<br>
+<br>
+Thank you very much!
+ <br>
+ <br>
+<span id="full-name"></span>
+ <br>
+ Task Team
+ <br>
+ </p>
+
+ <footer>Example.com, Example Road, Example, London, EX25 7EX</footer>
+
+ <script>
+  const action = localStorage.getItem('action');
+const country = localStorage.getItem('country');
+const fullName = localStorage.getItem('full-name');
+const orderNumber = localStorage.getItem('order-number');
+const waybillNumber = localStorage.getItem('waybill-number');
+const items = localStorage.getItem('items');
+const currency = localStorage.getItem('currency');
+const amount = localStorage.getItem('amount');
+const date = localStorage.getItem('date');
+const customer = localStorage.getItem('customer');
+const address = localStorage.getItem('address');
+
+document.getElementById('full-name').textContent = fullName;
+document.getElementById('waybill-number').textContent = waybillNumber;
+document.getElementById('date').textContent = date.split('-').reverse().join('-');
+document.getElementById('customer').textContent = customer;
+document.getElementById('address').textContent = address;
+
+document.title = 'LOA to ' + action + ' - ' + orderNumber;
+ </script>
+</body>
+
+</html>
