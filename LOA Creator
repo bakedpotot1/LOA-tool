@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Carrier Letter Generator</title>
+ <style>
+img{
+width: 20%;
+float: left;
+
+margin-top: -130px;
+margin-left: -49px;
+filter: invert();
+
+}
+
+.formDiv{
+ 
+  display: flex;
+  justify-content: center;
+  margin-left: 540px;
+  background-color: rgb(255, 255, 255);
+  max-width: 700px;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0px 0px 60px 5px rgba(0,0,0,0.7);
+}
+
+input[type=text]{
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0.5px solid;
+  margin: 10px 0;
+}
+input[type=number]{
+  display: inline-block;
+  width: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0.5px solid;
+  margin: 10px 0;
+}
+
+#currency{
+  display: inline-block;
+  width: 15%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0.5px solid;
+  margin: 10px 0;
+}
+
+#action{
+  display: inline-block;
+  width: 30%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0.5px solid;
+  margin: 10px 0;
+}
+
+#country{
+  display: inline-block;
+  width: 30%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0.5px solid;
+  margin: 10px 0;
+}
+
+#date{
+  display: inline-block;
+  width: 40%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0.5px solid;
+  margin: 10px 0;
+}
+
+#customerDiv{
+    margin-top: -55px;
+  }
+
+#create{
+  width: 40%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: none;
+  background: green; 
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 0px 0px 0.1px black;
+}
+
+#create:hover, #create:focus, #create:active{
+  box-shadow: 0 0 5px 0 black;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+#reset {
+  width: 40%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: none;
+  background: red;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 0px 0px 0.1px black;
+  }
+  
+  #reset:hover, #reset:focus, #reset:active{
+    box-shadow: 0 0 5px 0 black;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+
+body {
+background-image: linear-gradient(to bottom right, rgb(255, 59, 124), rgb(178, 45, 190));
+background-repeat: no-repeat;
+height: 100vh;
+display: flexbox;
+
+}
+
+#date {
+  cursor: pointer;
+}
+
+select{
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  align-items: center;
+
+}
+
+
+textarea {
+  display: inline-block;
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.hidden{
+ display:none;
+}
+
+.eeHide {
+display:none;
+}
+
+hr{
+ margin-top: -40px;
+ border: 2px solid black;
+}
+
+@media (max-width: 1280px){
+  .formDiv{
+    max-width: 500px;
+    margin-left: 360px;
+  }
+
+  img{
+    margin-top: -90px;
+    margin-left: -35px;
+  }
+
+  textarea {
+    height: 140px;
+}
+
+#valueDiv{
+    margin-top: -50px;
+  }
+
+
+}
+
+
+@media (max-width: 1710px){
+  .formDiv{
+    max-width: 600px;
+    margin-left: 520px;
+  }
+
+  img{
+    margin-top: -115px;
+    margin-left: -45px;
+  }
+
+  textarea {
+    height: 100px;
+}
+
+  #address{
+    height: 80px;
+  }
+
+  #customerDiv{
+    margin-top: -50px;
+  }
+  
+  #valueDiv{
+    margin-top: -50px;
+  }
+
+  #itemsDiv{
+    margin-top: -30px;
+  }
+  #nameDiv{
+    margin-top: -25px;
+  }
+  #orderDiv{
+    margin-top: -23px;
+  }
+  #waybillDiv{
+    margin-top: -23px;
+  } 
+#showMe{
+    margin-top: -25px;
+  }
+#address{
+    height: 80px;
+  }
+
+  #customerDiv{
+    margin-top: -55px;
+  }
+#addressDiv{
+    margin-top: -20px;
+  }    
+
+}
+
+@media (max-width: 1400px){
+  .formDiv{
+    max-width: 600px;
+    margin-left: 330px;
+  }
+
+  img{
+    margin-top: -90px;
+    margin-left: -35px;
+  }
+
+  textarea {
+    height: 100px;
+}
+
+  #address{
+    height: 80px;
+  }
+
+  #customerDiv{
+    margin-top: -50px;
+  }
+  
+  #valueDiv{
+    margin-top: -50px;
+  }
+
+  #itemsDiv{
+    margin-top: -30px;
+  }
+  #nameDiv{
+    margin-top: -25px;
+  }
+  #orderDiv{
+    margin-top: -23px;
+  }
+  #waybillDiv{
+    margin-top: -23px;
+  } 
+#showMe{
+    margin-top: -25px;
+  }
+#address{
+    height: 80px;
+  }
+
+  #customerDiv{
+    margin-top: -55px;
+  }
+#addressDiv{
+    margin-top: -20px;
+  }    
+
+}
+
+@media (max-width: 979px){
+  .formDiv{
+    max-width: 500px;
+    margin-left: 190px;
+  }
+
+  img{
+    display: none;
+  }
+
+  textarea {
+    height: 140px;
+}
+	#valueDiv{
+    margin-top: -50px;
+  }
+
+  #itemsDiv{
+    margin-top: -45px;
+  }
+
+}
+
+@media (max-width: 700px){
+  .formDiv{
+    max-width: 500px;
+    margin-left: 45px;
+  }
+
+  img{
+    display: none;
+  }
+
+  textarea {
+    height: 100px;
+}
+
+  #valueDiv{
+    margin-top: -50px;
+  }
+
+  #itemsDiv{
+    margin-top: -30px;
+  }
+  #nameDiv{
+    margin-top: -25px;
+  }
+  #orderDiv{
+    margin-top: -23px;
+  }
+  #waybillDiv{
+    margin-top: -23px;
+  } 
+#showMe{
+    margin-top: -25px;
+  }
+#address{
+    height: 80px;
+  }
+
+  #customerDiv{
+    margin-top: -55px;
+  }
+#addressDiv{
+    margin-top: -20px;
+  }    
+}
+
+ </style>
+</head>
+<body>
+<div class ="formDiv">
+ <form id="form">
+
+  <div>
+  <label for="action">Action:</label>
+  <select name="action" id="action" class="menu" autocomplete="off">
+    <option value="blank" selected disabled hidden>Please Select</option>
+    <option value="return">Return</option>
+    <option value="destroy">Destroy</option>
+  </select>
+
+
+    <label for="country">Country:</label>
+    <select name="country" id="country" class="menu" autocomplete="off">
+      <option value="blank" selected disabled hidden>Please Select</option>
+	  <option value="Afghan">Afghanistan</option>
+      <option value="Albanian">Albania</option>
+      <option value="Algerian">Algeria</option>
+	  <option value="American Samoan">American Samoa</option>
+	  <option value="Australian">Australia</option>
+      <option value="Austrian">Austria</option>
+      <option value="Azerbaijan">Azerbaijan</option>
+      <option value="Belgian">Belgium</option>
+      <option value="Bosnian">Bosnia</option>
+      <option value="Bosnian">Bosnia and Herzegovina</option>
+      <option value="Botswanan">Botswana</option>
+      <option value="Brazilian">Brazil</option>
+      <option value="Bulgarian">Bulgaria</option>
+      <option value="Cambodian">Cambodia</option>
+      <option value="Canadian">Canada</option>
+      <option value="Canarian">Canary Islands</option>
+      <option value="Chilean">Chile</option>
+      <option value="Cook Island">Cook Islands</option>
+      <option value="Croatian">Croatia</option>
+      <option value="Cypriot">Cyprus</option>
+      <option value="Czech">Czech Republic</option>
+      <option value="Danish">Denmark</option>
+      <option value="Estonian">Estonia</option>
+      <option value="Faroese">Faroe Islands</option>
+	  <option value="Fijian">Fiji</option>
+      <option value="Finnish">Finland</option>
+      <option value="French">France</option>
+      <option value="French Guianese">French Guiana</option>
+	  <option value="French Polynesian">French Polynesia</option>
+      <option value="German">Germany</option>
+      <option value="Gibraltarian">Gibraltar</option>
+      <option value="Greek">Greece</option>
+      <option value="Greenlandic">Greenland</option>
+	  <option value="Guamanian">Guam</option>
+      <option value="Hong Kongese">Hong Kong</option>
+      <option value="Hungarian">Hungary</option>
+      <option value="Indian">India</option>
+	  <option value="Indonesian">Indonesia</option>
+      <option value="Italian">Italy</option>
+      <option value="Irish">Ireland</option>
+      <option value="Japanese">Japan</option>
+	  <option value="Kiribati">Kiribati</option>
+      <option value="Korean">Korea</option>
+      <option value="Latvian">Latvia</option>
+      <option value="Lithuanian">Lithuania</option>
+      <option value="Luxembourgish">Luxembourg</option>
+      <option value="Maltese">Malta</option>
+	  <option value="Marshallese">Marshall Islands</option>
+      <option value="Martiniquan">Martinique</option>
+	  <option value="Micronesian">Micronesia</option>
+      <option value="Moldovan">Moldova</option>
+      <option value="Montenegrin">Montenegro</option>
+      <option value="Moroccan">Morocco</option>
+	  <option value="New Caledonian">New Caledonia</option>
+      <option value="Norwegian">Norway</option>
+      <option value="Pakistani">Pakistan</option>
+	  <option value="Palauan">Palau</option>
+	  <option value="Papua New Guinean">Papua New Guinea</option>
+      <option value="Peruvian">Peru</option>
+      <option value="Philippine">Philippines</option>
+      <option value="Polish">Poland</option>
+      <option value="Portuguese">Portugal</option>
+      <option value="Réunionese">Réunion</option>
+      <option value="Romanian">Romania</option>
+      <option value="Serbian">Serbia</option>
+      <option value="Singaporean">Singapore</option>
+      <option value="Slovakian">Slovakia</option>
+      <option value="Slovenian">Slovenia</option>
+	  <option value="Solomon Islander">Solomon Islands</option>
+      <option value="Spanish">Spain</option>
+      <option value="Swedish">Sweden</option>
+      <option value="Swiss">Switzerland</option>
+      <option value="Taiwanese">Taiwan</option>
+      <option value="Togolese">Togo</option>
+      <option value="Turkish">Turkey</option>
+      <option value="Ugandan">Uganda</option>
+	  <option value="Ni-Vanuatu">Vanuatu</option>
+      <option value="Vietnamese">Vietnam</option>
+    </select>
+  </div>
+  <br>
+  <div class="eeHide" id="showMe">
+      <label for="dateLabel">Todays Date:</label>
+      <input type="date" id="date">
+  </div>
+  <br>
+
+ <div id="nameDiv">
+  <label for="name">Advisor Name:</label>
+  <input type="text" id="fullName" name="name">
+ </div>
+
+ <br>
+
+ <div id="orderDiv">
+  <label for="order number" >Order Number:</label>
+  <input type="text" name="order number" id="orderNumber" maxlength="10" autocomplete="off">
+  </div>
+ <div id="waybillDiv">
+
+  <br>
+
+  <label for="waybill number">Waybill Number:</label>
+  <input type="text" name="waybill number" id="waybillNumber" autocomplete="off">
+  </div>
+
+  <br>
+  <br>
+
+  <div class="azHide viHide" id="itemsDiv" >
+   <label for="items" >Items:</label>
+    <textarea name="items" id="items"></textarea>
+  </div>
+
+  <br>
+
+  <div class="azHide moHide eeHide" id="customerDiv">
+    <label for="customer">Customer Name:</label>
+    <input type="text" name="customer" id="customer" autocomplete="off">
+  </div>
+
+  <br>
+  <div class="azHide moHide eeHide" id="addressDiv">
+  <label for="address">Customer Address:</label>
+  <textarea name="address" id="address"></textarea>
+  </div>
+  <br>
+
+  <div class="azHide moHide viHide" id="valueDiv">
+
+    <label for="value" >Value:</label>
+    <select name="currency" id="currency" autocomplete="off">
+      <option value="AED">AED</option>
+      <option value="AUD">AUD</option>
+      <option value="CAD">CAD</option>
+      <option value="CHF">CHF</option>
+      <option value="CNY">CNY</option>
+      <option value="CZK">CZK</option>
+      <option value="DKK">DKK</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="HKD">HKD</option>
+      <option value="ILS">ILS</option>
+      <option value="INR">INR</option>
+      <option value="JPY">JPY</option>
+      <option value="KRW">KRW</option>
+      <option value="MAD">MAD</option>
+      <option value="MDL">MDL</option>
+      <option value="NOK">NOK</option>
+      <option value="NZD">NZD</option>
+      <option value="PHP">PHP</option>
+      <option value="PLN">PLN</option>
+      <option value="RON">RON</option>
+      <option value="RMB">RMB</option>
+      <option value="RSD">RSD</option>
+      <option value="RUB">RUB</option>
+      <option value="SAR">SAR</option>
+      <option value="SEK">SEK</option>
+      <option value="SGD">SGD</option>
+      <option value="TWD">TWD</option>
+      <option value="VND">VND</option>
+      <option value="USD">USD</option>
+    </select>
+    <input type="number" step="0.01" name="amount" id="amount" >
+  </div>
+  
+  <br>
+
+  <div>
+    <input type="reset" id="reset">
+   <button type="submit" id="create">Create LOA</button>
+
+  </div>
+  
+ </form>
+</div>
+ <script>
+  const form = document.getElementById('form');
+const action = document.getElementById('action');
+const country = document.getElementById('country');
+const fullName = document.getElementById('fullName');
+const orderNumber = document.getElementById('orderNumber');
+const waybillNumber = document.getElementById('waybillNumber');
+const items = document.getElementById('items');
+const currency = document.getElementById('currency');
+const amount = document.getElementById('amount');
+const date = document.getElementById('date')
+const customer = document.getElementById('customer')
+const address = document.getElementById('address')
+const showMe = document.getElementById('showMe')
+
+var azHide = document.getElementsByClassName('azHide')
+var moHide = document.getElementsByClassName('moHide')
+var viHide = document.getElementsByClassName('viHide')
+var eeHide = document.getElementsByClassName('eeHide')
+var menu = document.getElementsByClassName('menu');
+
+for (var i = 0; i < menu.length; i++) {
+     menu[i].addEventListener('change', function(){
+          for (var j = 0; j < azHide.length; j++){
+          for (var k = 0; k < moHide.length; k++){
+          for (var l = 0; l < viHide.length; l++){
+          for (var m = 0; m < eeHide.length; m++){
+               if (action.value === 'return' && country.value === 'Azerbaijan' || action.value === 'return' && country.value === 'Indian' || action.value === 'return' && country.value === 'Turkish') {
+               azHide[j].style.display = 'none', showMe.style.display = 'block';
+               } else {
+               azHide[j].style.display = 'block'; 
+               }
+               if (action.value === 'return' && country.value === 'Moroccan') {
+               moHide[k].style.display = 'none', showMe.style.display = 'block'; 
+               }          
+               if (action.value === 'return' && country.value === 'Vietnamese') {
+               viHide[l].style.display = 'none', showMe.style.display = 'block'; 
+               } else {
+               eeHide[m].style.display = 'none';
+               }         
+    }}}}});
+};
+
+for (var n = 0; n < menu.length; n++) {
+     form.addEventListener('submit', function(e){
+     e.preventDefault();
+          if (action.value === 'return' && country.value === 'Azerbaijan'){
+               window.location.href = "Azerbaijan.html";
+          } else if (action.value === 'return' && country.value === 'Moroccan'){
+               window.location.href = "Morocco.html"
+          } else if (action.value === 'return' && country.value === 'Vietnamese'){
+               window.location.href = "Vietnam.html"
+          } else if (action.value === 'return' && country.value === 'Indian'){
+               window.location.href = "India.html"
+          } else if (action.value === 'return' && country.value === 'Turkish'){
+               window.location.href = "Turkey.html"
+          } else {
+               window.location.href = "loa.html"
+          }
+     const actionValue = action.value;
+     const countryValue = country.value;
+     const fullNameValue = fullName.value;
+     const orderNumberValue = orderNumber.value;
+     const waybillNumberValue = waybillNumber.value;
+     const itemsValue = items.value;
+     const currencyValue = currency.value;
+     const amountValue = amount.value;
+     const dateValue = date.value;
+     const customerValue = customer.value;
+     const addressValue = address.value;
+
+
+
+
+     localStorage.setItem('action', actionValue);
+     localStorage.setItem('country', countryValue);
+     localStorage.setItem('full-name', fullNameValue);
+     localStorage.setItem('order-number', orderNumberValue);
+     localStorage.setItem('waybill-number', waybillNumberValue);
+     localStorage.setItem('items', itemsValue);
+     localStorage.setItem('currency', currencyValue);
+     localStorage.setItem('amount', amountValue);
+     localStorage.setItem('date', dateValue);
+     localStorage.setItem('customer', customerValue);
+     localStorage.setItem('address', addressValue);
+
+
+
+})
+}
+
+form.addEventListener('reset', function(){
+     localStorage.clear();
+     window.location.reload();
+});
+
+ </script>
+</body>
+</html>
