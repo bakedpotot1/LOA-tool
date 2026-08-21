@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+p{
+margin-top: 20px;
+margin-left: 11px;
+ 
+}
+
+footer{
+ bottom: 0%;
+ position: fixed;
+ width: 100%;
+ text-align: center;
+ opacity: 50%;
+     }
+
+#dateRight{
+    text-align: right;
+    position: block;
+    margin-right: 50px;
+}
+
+li{
+    list-style-type: disc;
+}
+
+@media print {
+    @page {
+        margin: 1.5cm;
+    }
+}
+
+  </style>
+ <title>India</title>
+</head>
+
+<body>
+ 
+ <br>
+
+ <p>
+<div id="dateRight"><span id="date"></span></div>
+To,
+<br>
+  <br>
+ <div>
+
+The Deputy Commissioner of Customs 
+<br>
+New Courier Terminal,
+<br>
+IGI Airport
+<br>
+New Delhi - 110037
+<br>
+<br>
+Sub: <span id="order-number"></span>
+<br>
+HAWB: <span id="waybill-number"></span>
+<br>
+<br>
+Dear Sirs,
+<br>
+<br>
+The above subject shipment detained at customs (COURIER CELL), please grant the permission to RTO the shipment
+<br>
+<br>
+<div>
+<ul>
+  <li>Reason: No longer required by recipient</li>
+  <li>A/c Number (for freight/demurrage/penalty): 95/96 Import A/c</li>
+</ul>
+</div>
+<br>
+ Yours Sincerly,
+ <br>
+ <br>
+<span id="full-name"></span>
+ <br>
+ Task Team
+ <br>
+ </p>
+<div>
+ <footer>Example.com, Example Road, Example, London, EX25 7EX</footer>
+</div>
+ <script> 
+  const action = localStorage.getItem('action');
+const country = localStorage.getItem('country');
+const fullName = localStorage.getItem('full-name');
+const orderNumber = localStorage.getItem('order-number');
+const waybillNumber = localStorage.getItem('waybill-number');
+const date = localStorage.getItem('date');
+
+
+document.getElementById('full-name').textContent = fullName;
+document.getElementById('waybill-number').textContent = waybillNumber;
+document.getElementById('order-number').textContent = orderNumber;
+document.getElementById('date').textContent = date.split('-').reverse().join('-');
+
+document.title = 'LOA to ' + action + ' - ' + orderNumber;
+ </script>
+</body>
+
+</html>
