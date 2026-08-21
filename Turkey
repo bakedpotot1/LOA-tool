@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+p{
+margin-top: 20px;
+margin-left: 11px;
+ 
+}
+
+footer{
+ bottom: 0%;
+ position: fixed;
+ width: 100%;
+ text-align: center;
+ opacity: 50%;
+     }
+
+#dateRight{
+    text-align: right;
+    position: block;
+    margin-right: 50px;
+}
+
+@media print {
+    @page {
+        margin: 1.5cm;
+    }
+}
+  </style>
+ <title>Turkey</title>
+</head>
+
+<body>
+
+ <br>
+
+ <p>
+<div id="dateRight"><span id="date"></span></div>
+  <br>
+ <div>
+<b>For the attention of</b>
+<br>
+Republic of Turkey Ministy of Customs and Trade
+<br>
+Istanbul Customs and Trade Regional Management
+<br>
+Ataturk Airport Import Cargo Customs Management
+<br>
+ISTANBUL
+<br>
+<br>
+Dear Sirs,
+<br>
+<br>
+The shipment which was sent with DHL awb number <span id="waybill-number"></span> has been sent by mistake to Turkey.
+<br>
+<br>
+Account Number: 1231231231
+<br>
+<br>
+Please send the shipment back to the Origin.
+<br>
+<br>
+ Best regards,
+ <br>
+ <br>
+<span id="full-name"></span>
+ <br>
+ <br>
+ Task Team
+ <br>
+ </p>
+
+ <footer>Example.com, Example Road, Example, London, EX25 7EX</footer>
+
+ <script>
+  const action = localStorage.getItem('action');
+const country = localStorage.getItem('country');
+const fullName = localStorage.getItem('full-name');
+const orderNumber = localStorage.getItem('order-number');
+const waybillNumber = localStorage.getItem('waybill-number');
+const date = localStorage.getItem('date');
+
+
+document.getElementById('full-name').textContent = fullName;
+document.getElementById('waybill-number').textContent = waybillNumber;
+document.getElementById('date').textContent = date.split('-').reverse().join('-');
+
+document.title = 'LOA to ' + action + ' - ' + orderNumber;
+ </script>
+</body>
+
+</html>
