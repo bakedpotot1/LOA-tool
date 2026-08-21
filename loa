@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+table{
+        margin-top: 20px;
+
+}
+
+footer {
+    bottom: 0%;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    opacity: 50%;
+}
+
+tfoot td {
+    height: 20px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+@media print {
+
+    footer {
+        position: fixed;
+        bottom: 0;
+    };
+
+    div.item {
+        padding-bottom: 20px;
+    };
+
+    @page{
+        margin: 1.5cm;
+    }
+}
+  </style>
+ <title>loa</title>
+</head>
+<body>
+
+<br>
+
+<table>
+ <tbody>
+  <tr>
+   <td>
+
+<p>
+ <div>
+ Dear <span id="country"></span> Customs,
+
+ <br>
+ <br>
+</div>
+ Please proceed to <span id="action"></span> the shipment since the receiver hasn't cleared the shipment and the order is no longer required.
+ 
+ <br>
+ <br>
+
+ <div>Reference - <span id="order-number"></span></div>
+<br>
+ <div>Waybill - <span id="waybill-number"></span></div>
+
+<br>
+
+
+ We are very sorry for the inconvenience. Please <span id="action2"></span> the parcel, we accept the costs.
+
+<br>
+<br>
+
+ The full contents of the parcel:
+<br>
+<br>
+ <span id="items"></span>
+
+<br>
+<br>
+
+ Total value - <span id="currency"></span> <span id="amount"></span>
+ <br>
+ Account Number - 1231231231
+
+<br>
+<br>
+
+ Please email me if you have any questions.
+
+<br>
+<br>
+
+ Kind regards,
+<br>
+<br>
+
+
+ <span id="full-name"></span>
+ <br>
+ <br>
+ Operations Support Team
+ <br>
+</div>
+ <br>
+</p>
+   </td>
+  </tr>
+ </tbody>
+ <tfoot>
+  <tr>
+   <td>&nbsp;</td>
+  </tr>
+ </tfoot>
+</table>
+
+
+<footer class="footer">Example.com, Example Road, Example, London, EX25 7EX</footer>
+
+<script>
+   const action = localStorage.getItem('action');
+const country = localStorage.getItem('country');
+const fullName = localStorage.getItem('full-name');
+const items = localStorage.getItem('items');
+const orderNumber = localStorage.getItem('order-number');
+const waybillNumber = localStorage.getItem('waybill-number');
+const date = localStorage.getItem('date')
+const currency = localStorage.getItem('currency')
+const amount = localStorage.getItem('amount')
+
+
+document.getElementById('action').textContent = action;
+document.getElementById('action2').textContent = action;
+document.getElementById('country').textContent = country;
+document.getElementById('full-name').textContent = fullName;
+document.getElementById('items').innerHTML = items.split("\n").join("<br>");
+document.getElementById('order-number').textContent = orderNumber;
+document.getElementById('waybill-number').textContent = waybillNumber;
+document.getElementById('currency').textContent = currency;
+document.getElementById('amount').textContent = amount;
+
+
+document.title = 'LOA to ' + action + ' - ' + orderNumber;
+</script>
+</body>
+</html>
+
